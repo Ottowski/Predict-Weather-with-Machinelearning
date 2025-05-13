@@ -24,8 +24,8 @@ model.fit(X_train, y_train)
 # Evaluate model
 y_pred = model.predict(X_test)
 rmse = mean_squared_error(y_test, y_pred, squared=False)
-print(f"✅ Modell tränad. RMSE: {rmse:.2f}")
+print(f"Model trained. RMSE: {rmse:.2f}")
 
 # Save model
 joblib.dump(model, 'model/linear_model.pkl')
-print("💾 Modell sparad till 'model/linear_model.pkl'")
+print("Model saved to model/linear_model.pkl'")

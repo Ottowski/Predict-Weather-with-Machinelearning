@@ -23,4 +23,4 @@ input_data = pd.DataFrame([{
 }])
 # Prediction
 predicted_temp = model.predict(input_data)[0]
-print(f"🌡️ Förutsagd temperatur: {predicted_temp:.2f} °C")
+print(f"Predicted temperatur: {predicted_temp:.2f} °C")

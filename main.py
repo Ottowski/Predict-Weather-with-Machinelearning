@@ -6,6 +6,7 @@ from src.data_processor import data_processor
 def main():
     # Reads data
     WH = load_weather_data("data/weatherHistory.csv")
+    print(WH.columns)
     
     # Treat data
     WH_clean = data_processor(WH)

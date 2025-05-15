@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import root_mean_squared_error
 import pandas as pd
 import joblib
 
@@ -23,7 +23,7 @@ model.fit(X_train, y_train)
 
 # Evaluate model
 y_pred = model.predict(X_test)
-rmse = mean_squared_error(y_test, y_pred, squared=False)
+rmse = root_mean_squared_error(y_test, y_pred, squared=False)
 print(f"Model trained. RMSE: {rmse:.2f}")
 
 # Save model

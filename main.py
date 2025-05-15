@@ -32,7 +32,7 @@ def main():
 
     # Trains data
     model = train_linear_regression(WH_clean)
-    print("\n Modell is trained and ready for use!")
+    print("\nModell is trained and ready for use!")
 
     # Train Random Forest
     rf_model = train_random_forest(X_train, X_test, y_train, y_test)

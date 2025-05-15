@@ -37,9 +37,19 @@ def main():
     # Train Random Forest
     rf_model = train_random_forest(X_train, X_test, y_train, y_test)
 
+    # Filter data to realistic value ranges
+    WH_filtered = WH[
+        (WH['Temperature (C)'] > -40) & (WH['Temperature (C)'] < 60) &
+        (WH['Pressure (millibars)'] > 970) & (WH['Pressure (millibars)'] < 1050) &
+        (WH['Humidity'] >= -2.0) & (WH['Humidity'] <= 4.0) &
+        (WH['Wind Speed (km/h)'] >= 0) & (WH['Wind Speed (km/h)'] <= 100)
+    ]
+
     # Check if 'Temperature (C)' exists in the data and plot pairplot
     if 'Temperature (C)' in WH.columns:
-        sns.pairplot(WH[['Temperature (C)', 'Humidity', 'Wind Speed (km/h)', 'Pressure (millibars)']])
+        # Create pairplot to better visualize features
+        sns.pairplot(WH_filtered[['Temperature (C)', 'Humidity', 'Wind Speed (km/h)', 'Pressure (millibars)']])
+        plt.suptitle("Filtered Feature Relationships (Expanded Ranges)", y=1.02)
         plt.show()
     else:
         print("Column 'Temperature (C)' doesn't exist in the cleaned data.")

@@ -6,8 +6,24 @@ def data_processor(WH):
     WH['month'] = WH['date'].dt.month
     WH['weekday'] = WH['date'].dt.weekday
     WH['day'] = WH['date'].dt.day
-    WH = WH.dropna()
-    if "Temperature (C)" in WH.columns:
-        WH = WH.rename(columns={"Temperature (C)": "avg_temp"})
+
+    # Changes name for given columns
+    rename_map = {
+        "Temperature (C)": "avg_temp",
+        "Humidity": "humidity",
+        "Wind Speed (km/h)": "wind_speed",
+        "Pressure (millibars)": "pressure"
+    }
+    WH = WH.rename(columns=rename_map)
+
+    # remove values after columns changed  
+    WH = WH.dropna(subset=["avg_temp", "humidity", "wind_speed", "pressure"])
+
+    print("Columns after processing:", WH.columns.tolist())  
 
     return WH
+
+if __name__ == "__main__":
+    df = pd.read_csv("data/weatherHistory.csv")
+    df_clean = data_processor(df)
+    print(df_clean.head())

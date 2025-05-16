@@ -13,10 +13,10 @@ import os
 # See if models successfully loaded 
 def load_models():
     try:
-        humidity_model = joblib.load("model/humidity_model.pkl")
-        wind_model = joblib.load("model/wind_model.pkl")
-        pressure_model = joblib.load("model/pressure_model.pkl")
-        temperature_model = joblib.load("model/temperature_model.pkl")
+        humidity_model = joblib.load("saved-models/humidity_model.pkl")
+        wind_model = joblib.load("saved-models/wind_model.pkl")
+        pressure_model = joblib.load("saved-models/pressure_model.pkl")
+        temperature_model = joblib.load("saved-models/temperature_model.pkl")
         print("Models loaded successfully.")
         return humidity_model, wind_model, pressure_model, temperature_model
     except FileNotFoundError as e:

@@ -17,6 +17,6 @@ input_data = pd.DataFrame([{
 }])
 
 # Load model and predict
-model = joblib.load("models/pressure_model.pkl")
+model = joblib.load("predict-models/pressure_model.pkl")
 predicted_pressure = model.predict(input_data)[0]
 print(f"Predicted Pressure: {predicted_pressure:.2f} millibars")

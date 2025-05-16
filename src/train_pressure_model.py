@@ -33,5 +33,5 @@ rmse = root_mean_squared_error(y_test, y_pred)
 print(f"Pressure Model RMSE: {rmse:.4f}")
 
 # Save
-joblib.dump(model, 'model/pressure_model.pkl')
-print("Model saved: model/pressure_model.pkl")
+joblib.dump(model, 'saved-models/pressure_model.pkl')
+print("Model saved: saved-models/pressure_model.pkl")

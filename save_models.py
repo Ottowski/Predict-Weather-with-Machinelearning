@@ -40,15 +40,15 @@ def train_and_save_models():
     temperature_model = LinearRegression().fit(X_temp, y_temp)
 
     # Creates folder, if already doesn't exist
-    os.makedirs("model", exist_ok=True)
+    os.makedirs("saved-models", exist_ok=True)
 
     # Save models
-    joblib.dump(humidity_model, "model/humidity_model.pkl")
-    joblib.dump(wind_model, "model/wind_model.pkl")
-    joblib.dump(pressure_model, "model/pressure_model.pkl")
-    joblib.dump(temperature_model, "model/temperature_model.pkl")
+    joblib.dump(humidity_model, "saved-models/humidity_model.pkl")
+    joblib.dump(wind_model, "saved-models/wind_model.pkl")
+    joblib.dump(pressure_model, "saved-models/pressure_model.pkl")
+    joblib.dump(temperature_model, "saved-models/temperature_model.pkl")
 
-    print("All models have been trained and been saved in the 'model/' folder.")
+    print("All models have been trained and been saved in the 'saved-models/' folder.")
 
 
 if __name__ == "__main__":

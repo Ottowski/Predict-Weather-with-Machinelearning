@@ -17,6 +17,6 @@ input_data = pd.DataFrame([{
 }])
 
 # Load model and predict
-model = joblib.load("models/temperature_model.pkl")
+model = joblib.load("predict-models/temperature_model.pkl")
 predicted_temp = model.predict(input_data)[0]
 print(f"Predicted temperatur: {predicted_temp:.2f} °C")

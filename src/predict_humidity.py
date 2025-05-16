@@ -17,6 +17,6 @@ input_data = pd.DataFrame([{
 }])
 
 # Load model and predict
-model = joblib.load("models/humidity_model.pkl")
+model = joblib.load("predict-models/humidity_model.pkl")
 predicted_humidity = model.predict(input_data)[0]
 print(f"Predicted Humidity: {predicted_humidity:.3f}")

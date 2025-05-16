@@ -33,5 +33,5 @@ rmse = root_mean_squared_error(y_test, y_pred)
 print(f"Wind Speed Model RMSE: {rmse:.4f}")
 
 # Save
-joblib.dump(model, 'model/wind_speed_model.pkl')
-print("Model saved: model/wind_speed_model.pkl")
+joblib.dump(model, 'saved-models/wind_speed_model.pkl')
+print("Model saved: saved-models/wind_speed_model.pkl")

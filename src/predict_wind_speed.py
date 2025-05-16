@@ -17,6 +17,6 @@ input_data = pd.DataFrame([{
 }])
 
 # Load model and predict
-model = joblib.load("models/wind_speed_model.pkl")
+model = joblib.load("predict-models/wind_speed_model.pkl")
 predicted_wind_speed = model.predict(input_data)[0]
 print(f"Predicted Wind Speed: {predicted_wind_speed:.2f} km/h")

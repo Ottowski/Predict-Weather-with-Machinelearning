@@ -33,5 +33,5 @@ rmse = root_mean_squared_error(y_test, y_pred)
 print(f"Humidity Model RMSE: {rmse:.4f}")
 
 # Save
-joblib.dump(model, 'model/humidity_model.pkl')
-print("Model saved: model/humidity_model.pkl")
+joblib.dump(model, 'saved-models/humidity_model.pkl')
+print("Model saved: saved-models/humidity_model.pkl")

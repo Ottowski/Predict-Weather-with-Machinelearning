@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import joblib
 import os
 
-os.makedirs("models", exist_ok=True)
+os.makedirs("predict-models", exist_ok=True)
 
 # Read data
 df = pd.read_csv(r"data/weatherHistory.csv")

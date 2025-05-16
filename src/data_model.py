@@ -4,9 +4,9 @@ def train_linear_regression(WH):
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import root_mean_squared_error
 
-    features = ["avg_temp", "humidity", "wind_speed", "pressure"]
+    features = ["Temperature (C)", "Humidity", "Wind Speed (km/h)", "Pressure (millibars)"]
     X = WH[features]
-    y = WH['avg_temp']
+    y = WH['Temperature (C)']
 
     # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

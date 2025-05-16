@@ -76,14 +76,14 @@ def main():
     print("Cleaned data:")
     print(WH_clean.head())
 
-    # Control if 'avg_temp' already exist
-    if "avg_temp" not in WH_clean.columns:
-        print("Column 'avg_temp' doesn't exist in the cleaned data.")
+    # Control if 'Temperature (C)' already exist
+    if "Temperature (C)" not in WH_clean.columns:
+        print("Column 'Temperature (C)' doesn't exist in the cleaned data.")
         return
 
     # Create features and target
-    X = WH_clean.drop(["avg_temp", "date", "Summary", "Precip Type", "Daily Summary"], axis=1)
-    y = WH_clean["avg_temp"]
+    X = WH_clean.drop(["Temperature (C)", "date", "Summary", "Precip Type", "Daily Summary"], axis=1)
+    y = WH_clean["Temperature (C)"]
 
     # Split up trained and test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

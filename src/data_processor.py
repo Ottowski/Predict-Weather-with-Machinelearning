@@ -7,18 +7,6 @@ def data_processor(WH):
     WH['weekday'] = WH['date'].dt.weekday
     WH['day'] = WH['date'].dt.day
 
-    # Changes name for given columns
-    rename_map = {
-        "Temperature (C)": "avg_temp",
-        "Humidity": "humidity",
-        "Wind Speed (km/h)": "wind_speed",
-        "Pressure (millibars)": "pressure"
-    }
-    WH = WH.rename(columns=rename_map)
-
-    # remove values after columns changed  
-    WH = WH.dropna(subset=["avg_temp", "humidity", "wind_speed", "pressure"])
-
     print("Columns after processing:", WH.columns.tolist())  
 
     return WH

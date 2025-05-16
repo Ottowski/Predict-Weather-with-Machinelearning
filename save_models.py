@@ -14,24 +14,24 @@ def train_and_save_models():
     print("Good! The File is read.")
 
     # control if coluns exist 
-    expected_columns = ["avg_temp", "humidity", "wind_speed", "pressure"]
+    expected_columns = ["Temperature (C)", "Humidity", "Wind Speed (km/h)", "Pressure (millibars)"]
     for col in expected_columns:
         if col not in df_clean.columns:
             raise KeyError(f"Column '{col}' missing in cleaned data.")
 
     # Prepare input/output for every model 
 
-    X_humidity = df_clean[["avg_temp", "wind_speed", "pressure"]]
-    y_humidity = df_clean["humidity"]
+    X_humidity = df_clean[["Temperature (C)", "Wind Speed (km/h)", "Pressure (millibars)"]]
+    y_humidity = df_clean["Humidity"]
 
-    X_wind = df_clean[["avg_temp", "humidity", "pressure"]]
-    y_wind = df_clean["wind_speed"]
+    X_wind = df_clean[["Temperature (C)", "Humidity", "Pressure (millibars)"]]
+    y_wind = df_clean["Wind Speed (km/h)"]
 
-    X_pressure = df_clean[["avg_temp", "humidity", "wind_speed"]]
-    y_pressure = df_clean["pressure"]
+    X_pressure = df_clean[["Temperature (C)", "Humidity", "Wind Speed (km/h)"]]
+    y_pressure = df_clean["Pressure (millibars)"]
 
-    X_temp = df_clean[["humidity", "wind_speed", "pressure"]]
-    y_temp = df_clean["avg_temp"]
+    X_temp = df_clean[["Humidity", "Wind Speed (km/h)", "Pressure (millibars)"]]
+    y_temp = df_clean["Temperature (C)"]
 
     # Train models
     humidity_model = LinearRegression().fit(X_humidity, y_humidity)

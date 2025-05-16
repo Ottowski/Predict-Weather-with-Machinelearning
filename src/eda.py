@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Read Data
-df = pd.read_csv(r"C:\Users\ottoa\OneDrive\Skrivbord\Predict Weather with Machinelearning\data\weatherHistory.csv")
+df = pd.read_csv(r"data/weatherHistory.csv")
 
 # Data Cleaning
 df = df.rename(columns={'Formatted Date': 'date'})

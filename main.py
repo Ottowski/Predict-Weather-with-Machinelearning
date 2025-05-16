@@ -45,6 +45,7 @@ def main():
         (WH['Wind Speed (km/h)'] >= 0) & (WH['Wind Speed (km/h)'] <= 100)
     ]
 
+
     # Check if 'Temperature (C)' exists in the data and plot pairplot
     if 'Temperature (C)' in WH.columns:
         # Create pairplot to better visualize features

@@ -3,12 +3,23 @@ from src.data_model import train_linear_regression
 from src.data_processor import data_processor
 from src.random_forest_model import train_random_forest
 from sklearn.model_selection import train_test_split
+from eda import EDA
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import joblib
 import os
+import warnings
 
+warnings.filterwarnings(action='ignore', message='X does not have valid feature names')
+
+
+WH = load_weather_data("data/weatherHistory.csv")
+eda = EDA(WH)
+eda.summary()
+eda.check_nulls()
+eda.plot_histograms()
+eda.plot_correlation_heatmap()
 
 # See if models successfully loaded 
 def load_models():

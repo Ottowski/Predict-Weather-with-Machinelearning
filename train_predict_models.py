@@ -33,4 +33,4 @@ y_pressure = df["Pressure (millibars)"]
 model_pressure = LinearRegression().fit(X_pressure, y_pressure)
 joblib.dump(model_pressure, "predict-models/pressure_model.pkl")
 
-print("All models are trained and saved in 'predict-models/'folder.")
+print("All models are trained and saved in the 'predict-models/'folder.")

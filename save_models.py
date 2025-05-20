@@ -11,7 +11,7 @@ def train_and_save_models():
     df = load_weather_data("data/weatherHistory.csv")
     df_clean = data_processor(df)
 
-    print("Good! The File is read.")
+    print("Good! The file is read succesfully.")
 
     # control if coluns exist 
     expected_columns = ["Temperature (C)", "Humidity", "Wind Speed (km/h)", "Pressure (millibars)"]
@@ -48,7 +48,7 @@ def train_and_save_models():
     joblib.dump(pressure_model, "saved-models/pressure_model.pkl")
     joblib.dump(temperature_model, "saved-models/temperature_model.pkl")
 
-    print("All models have been trained and been saved in the 'saved-models/' folder.")
+    print("All models have been trained and saved in the 'saved-models/' folder.")
 
 
 if __name__ == "__main__":
